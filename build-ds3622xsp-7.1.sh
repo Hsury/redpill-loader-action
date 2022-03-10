@@ -61,12 +61,15 @@ sed -i '0,/"sha256.*/s//"sha256": "'$os_sha256'"/' ./config/DS3622xs+/${build_pa
 cat ./config/DS3622xs+/${build_para}/config.json
 
 # 7.1.0 must add this ext
-./ext-manager.sh add https://raw.githubusercontent.com/jumkey/redpill-load/develop/redpill-misc/rpext-index.json  
+./ext-manager.sh add https://raw.githubusercontent.com/Hsury/redpill-loader-action/develop/redpill-ext/misc/rpext-index.json
 # add optional ext
-./ext-manager.sh add https://raw.githubusercontent.com/dogodefi/mpt3sas/offical/rpext-index.json
-#./ext-manager.sh add https://raw.githubusercontent.com/dogodefi/redpill-ext/master/acpid/rpext-index.json
-# ./ext-manager.sh add https://raw.githubusercontent.com/dogodefi/mpt3sas/offical/rpext-index.json
-# ./ext-manager.sh add https://raw.githubusercontent.com/jumkey/redpill-load/develop/redpill-virtio/rpext-index.json
+./ext-manager.sh add https://raw.githubusercontent.com/Hsury/redpill-loader-action/develop/redpill-ext/acpid/rpext-index.json
+./ext-manager.sh add https://raw.githubusercontent.com/Hsury/redpill-loader-action/develop/redpill-ext/e1000/rpext-index.json
+./ext-manager.sh add https://raw.githubusercontent.com/Hsury/redpill-loader-action/develop/redpill-ext/e1000e/rpext-index.json
+./ext-manager.sh add https://raw.githubusercontent.com/Hsury/redpill-loader-action/develop/redpill-ext/mpt3sas/rpext-index.json
+./ext-manager.sh add https://raw.githubusercontent.com/Hsury/redpill-loader-action/develop/redpill-ext/virtio/rpext-index.json
+./ext-manager.sh add https://raw.githubusercontent.com/Hsury/redpill-loader-action/develop/redpill-ext/vmw_pvscsi/rpext-index.json
+./ext-manager.sh add https://raw.githubusercontent.com/Hsury/redpill-loader-action/develop/redpill-ext/vmxnet3/rpext-index.json
 sudo ./build-loader.sh 'DS3622xs+' '7.1.0-42550'
 mv images/redpill-DS3622xs+_7.1.0-42*.img ${root}/output/
 cd ${root}
